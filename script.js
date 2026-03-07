@@ -308,3 +308,28 @@ if(avatars.length > 0) {
         });
     });
 }
+
+// =========================================
+// 15. CORREÇÃO: SETA "VOLTAR AO TOPO"
+// =========================================
+const backToTopBtns = document.querySelectorAll('.back-to-top');
+
+if (backToTopBtns.length > 0) {
+    backToTopBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault(); // Impede o pulo "seco" do navegador que trava o texto
+            
+            // 1. Força o "GET IN TOUCH" a sumir e o "JOÃO VITOR" a voltar imediatamente
+            gsap.to("#ticker-contact", { opacity: 0, duration: 0.3 });
+            gsap.to("#ticker-main", { opacity: 1, duration: 0.3 });
+            gsap.to(".navbar", { y: 0, opacity: 1, duration: 0.3 });
+            
+            // 2. Sobe até o topo da página de forma suave como uma seda
+            if (typeof lenis !== "undefined") {
+                lenis.scrollTo(0, { duration: 1.5 });
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    });
+}
