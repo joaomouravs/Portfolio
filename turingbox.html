@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000"> 
+    <title>Turingbox | Projeto</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="turingbox.css">
+</head>
+<body id="top" class="project-page" style="background: transparent;">
+
+    <div class="page-transition"></div>
+
+    <div class="preloader project-preloader" style="background-color: #D32F2F;">
+        <div class="preloader-counter" style="color: #fff;">0%</div>
+    </div>
+
+    <div class="scroll-progress"></div>
+    <div class="film-grain"></div>
+    <div class="custom-cursor"></div>
+
+    <button class="sound-toggle hover-target magnetic" aria-label="Toggle Sound">
+        <i class="fa-solid fa-volume-xmark"></i>
+    </button>
+
+    <div class="background-container" style="z-index: 0;">
+        <img src="img/perfil.png" alt="Perfil" class="background-image">
+        <div class="background-overlay"></div>
+    </div>
+
+    <div class="liquid-glass-ticker" id="ticker-contact" aria-hidden="true" style="opacity: 0; z-index: 1; pointer-events: none;">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <mask id="text-mask-contact">
+                    <text class="glass-text" x="100%" y="50%" dominant-baseline="central" fill="white">
+                        GET IN TOUCH - GET IN TOUCH &nbsp;&nbsp;&nbsp; GET IN TOUCH - GET IN TOUCH
+                    </text>
+                </mask>
+            </defs>
+            <g mask="url(#text-mask-contact)">
+                <image class="glass-bg-image" href="img/perfil.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                <rect width="100%" height="100%" fill="rgba(255, 255, 255, 0.08)" />
+            </g>
+            <text class="glass-text" x="100%" y="50%" dominant-baseline="central" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2">
+                GET IN TOUCH - GET IN TOUCH &nbsp;&nbsp;&nbsp; GET IN TOUCH - GET IN TOUCH
+            </text>
+        </svg>
+    </div>
+
+    <nav class="navbar" style="background: transparent; backdrop-filter: none; z-index: 200;">
+        <a href="index.html" class="logo scramble hover-target click-target" style="color: #fff; text-decoration: none;">© VOLTAR PARA HOME</a>
+        <!--<div class="menu-btn hover-target">
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>-->
+    </nav>
+
+    <header class="project-hero-wrapper" style="position: relative; z-index: 2;">
+        <img src="img/turingbox-capa.png" alt="Turingbox Hero" class="project-hero-img parallax-img-inner">
+    </header>
+
+    <div class="marquee-tape" style="position: relative; z-index: 2;">
+        <div class="marquee-content">
+            <span>STACK: HTML, CSS, JAVASCRIPT, PHP, BANCO DE DADOS E FIGMA • ANO: 2025 • ROLE: FULL-STACK & UI DESIGNER • </span>
+            <span>STACK: HTML, CSS, JAVASCRIPT, PHP, BANCO DE DADOS E FIGMA • ANO: 2025 • ROLE: FULL-STACK & UI DESIGNER • </span>
+            <span>STACK: HTML, CSS, JAVASCRIPT, PHP, BANCO DE DADOS E FIGMA • ANO: 2025 • ROLE: FULL-STACK & UI DESIGNER • </span>
+        </div>
+    </div>
+
+    <section class="project-info-section" style="position: relative; z-index: 2; background: #000;">
+        <h1 class="project-main-title scramble">Turingbox</h1>
+        <div class="project-overview-grid">
+            <span class="section-tag">// Panorama geral</span>
+            <div class="overview-text reveal-text">
+                <p>O TuringBox é um sistema web desenvolvido para gerenciar o empréstimo de dispositivos tecnológicos no CEFET/RJ – Campus Nova Iguaçu. A plataforma permite que alunos solicitem equipamentos online, enquanto a equipe administrativa acompanha pedidos, aprovações, devoluções e o estado dos dispositivos de forma organizada e segura. O projeto foi criado para substituir processos manuais, trazendo mais controle, transparência e eficiência, além de contribuir para a inclusão digital de estudantes que precisam de recursos tecnológicos para realizar suas atividades acadêmicas.</p>
+                
+                <div class="project-meta-panel">
+                    <div class="meta-item"><span>CLIENTE</span><p>CEFET/RJ campus Nova Iguaçu</p></div>
+                    <div class="meta-item"><span>PAPEL</span><p>Front-End & Backend </p></div>
+                    <div class="meta-item"><span>ANO</span><p>2025</p></div>
+                    <!--<div class="meta-item"><span>LIVE</span><a href="#" class="hover-target">turingbox.com ↗</a></div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-body-wrapper" style="position: relative; z-index: 2; background: #000;">
+        
+        <div class="timeline-sidebar">
+            <div class="timeline-line">
+                <div class="timeline-progress"></div>
+            </div>
+            <ul class="timeline-steps">
+                <li class="step active" data-target="step-1">01. Sistema</li>
+                <li class="step" data-target="step-2">02. Interfaces</li>
+                <li class="step" data-target="step-3">03. Resultado</li>
+            </ul>
+        </div>
+
+        <div class="project-content-right">
+            
+            <div class="design-system-section" id="step-1">
+                <span class="section-tag">// Sistema de design</span>
+                <div class="ds-grid">
+                    <div class="ds-colors">
+                        <div class="color-box" style="background: #3B82F6;"><span class="scramble">#3B82F6</span></div>
+                        <div class="color-box" style="background: #F1F5F9;"><span class="scramble">#F1F5F9</span></div>
+                        <div class="color-box" style="background: #0F172A;"><span class="scramble">#0F172A</span></div>
+                        <div class="color-box" style="background: #FFFFFF; color: #000;"><span class="scramble">#FFFFFF</span></div>
+                    </div>
+                    <div class="ds-typography">
+                        <h1 class="font-primary">Inter</h1>
+                        <p class="font-secondary">JetBrains Mono for paragraphs. Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-gallery-section" id="step-2">
+                <div class="gallery-item hover-target tilt-card clip-reveal" data-cursor-text="VIEW">
+                    <img src="img/turingbox-1.jpg" alt="Mockup 1">
+                </div>
+                
+                <div class="gallery-2-col" id="step-3">
+                    <div class="gallery-item hover-target tilt-card clip-reveal" data-cursor-text="VIEW">
+                        <img src="img/turingbox-4.jpg" alt="Mockup 2">
+                    </div>
+                    <div class="gallery-item hover-target tilt-card clip-reveal" data-cursor-text="VIEW">
+                        <img src="img/turingbox-2.jpg" alt="Mockup 3">
+                    </div>
+                </div>
+                
+                <div class="gallery-item hover-target tilt-card clip-reveal" data-cursor-text="VIEW">
+                    <img src="img/turingbox-3.jpg" alt="Mockup 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="more-projects-section" style="position: relative; z-index: 2; background: #000; padding-bottom: 200px;">
+        <span class="section-tag">// Mais Projetos</span>
+        <div class="more-projects-grid">
+            <div class="more-project-card placeholder-card">
+                <div class="more-project-img-wrapper development-box">
+                    <div class="dev-content hover-target">
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Em Desenvolvimento</h2>
+                        <p>Novo case de sucesso chegando em breve.</p>
+                    </div>
+                </div>
+                <div class="more-project-details">
+                    <h3 style="color: #555;">Projeto Secreto</h3>
+                    <p>(2026)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="contact-section project-footer" id="contato" style="background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.5) 30%, transparent 100%); pointer-events: none; z-index: 2;">
+        <div class="contact-minimal-email" style="pointer-events: auto;">
+            <strong>E-mail:</strong> 
+            <a href="#" class="hover-target scramble copy-email click-target" id="email-link-interno">joaoviux@gmail.com</a>
+            <div class="local-time-wrapper">
+                Local time: Rio de Janeiro, BR • <span id="local-time">--:--</span>
+            </div>
+        </div>
+        
+        <a href="#top" class="back-to-top hover-target magnetic click-target" title="Voltar ao Topo" style="pointer-events: auto;">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    
+    <script src="script.js"></script>
+    <script src="turingbox.js"></script>
+
+</body>
+</html>

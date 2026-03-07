@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Portfólio | João Vitor</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+    <div class="page-transition"></div>
+
+    <div class="scroll-progress"></div>
+
+    <div class="preloader">
+        <div class="preloader-counter">0%</div>
+    </div>
+
+    <div class="film-grain"></div>
+
+    <div class="custom-cursor"></div>
+
+    <button class="sound-toggle hover-target magnetic" aria-label="Toggle Sound">
+        <i class="fa-solid fa-volume-xmark"></i>
+    </button>
+
+    <div class="background-container">
+        <img src="img/perfil.png" alt="Perfil" class="background-image">
+        <div class="dynamic-bg-layer"></div> 
+        <div class="background-overlay"></div>
+    </div>
+
+    <div class="liquid-glass-ticker" id="ticker-main" aria-hidden="true">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <mask id="text-mask-main">
+                    <text class="glass-text" x="100%" y="50%" dominant-baseline="central" fill="white">
+                        JOÃO VITOR &nbsp;&nbsp;&nbsp; JOÃO VITOR &nbsp;&nbsp;&nbsp; JOÃO VITOR
+                    </text>
+                </mask>
+            </defs>
+            <g mask="url(#text-mask-main)">
+                <image class="glass-bg-image" href="img/perfil.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                <rect width="100%" height="100%" fill="rgba(255, 255, 255, 0.08)" />
+            </g>
+            <text class="glass-text" x="100%" y="50%" dominant-baseline="central" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2">
+                JOÃO VITOR &nbsp;&nbsp;&nbsp; JOÃO VITOR &nbsp;&nbsp;&nbsp; JOÃO VITOR
+            </text>
+        </svg>
+    </div>
+
+    <div class="liquid-glass-ticker" id="ticker-contact" aria-hidden="true" style="opacity: 0;">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <mask id="text-mask-contact">
+                    <text class="glass-text" x="100%" y="50%" dominant-baseline="central" fill="white">
+                        GET IN TOUCH - GET IN TOUCH &nbsp;&nbsp;&nbsp; GET IN TOUCH - GET IN TOUCH
+                    </text>
+                </mask>
+            </defs>
+            <g mask="url(#text-mask-contact)">
+                <image class="glass-bg-image" href="img/perfil.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                <rect width="100%" height="100%" fill="rgba(255, 255, 255, 0.08)" />
+            </g>
+            <text class="glass-text" x="100%" y="50%" dominant-baseline="central" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2">
+                GET IN TOUCH - GET IN TOUCH &nbsp;&nbsp;&nbsp; GET IN TOUCH - GET IN TOUCH
+            </text>
+        </svg>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo scramble">© JOÃO VITOR & UI/UX</div>
+        <div class="menu-btn hover-target">
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#projetos" class="hover-target click-target">Projetos</a></li>
+            <li><a href="#sobre" class="hover-target click-target">Sobre</a></li>
+            <li><a href="#servicos" class="hover-target click-target">Serviços</a></li>
+            <li><a href="#depoimentos" class="hover-target click-target">Depoimentos</a></li>
+            <li><a href="#contato" class="hover-target click-target">Contato</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper">
+        <main class="hero">
+          <div class="social-links">
+    <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-aa9a6724b/" target="_blank" class="hover-target magnetic click-target">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+    
+    <a href="https://www.behance.net/joovmourad" target="_blank" class="hover-target magnetic click-target">
+        <i class="fa-brands fa-behance"></i>
+    </a>
+    
+    <a href="https://www.instagram.com/joaovux" target="_blank" class="hover-target magnetic click-target">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+</div>
+            <div class="hero-text">
+                <h1 class="scramble">// WEB CREATOR <br> UI DESIGNER</h1>
+            </div>
+        </main>
+    </div>
+
+    <section class="intro-section" id="sobre">
+        <div class="intro-container">
+            <span class="section-tag">// Intro</span>
+            <h2 class="reveal-text">
+                <span class="text-highlight">Designer</span> <span>e</span> <span>desenvolvedor</span> <span>especializado</span> <span>em</span> <span>criar</span> <span>produtos</span> <span>digitais</span> <span>com</span> <span class="text-highlight">estética</span> <span class="text-highlight">refinada.</span> <span>Trabalho</span> <span>com</span> <span>foco</span> <span>em</span> <span class="text-highlight">clareza</span> <span>e</span> <span class="text-highlight">performance.</span>
+            </h2>
+            <div class="intro-secondary">
+                <p>Transformo visões em experiências digitais bem executadas, unindo design, estratégia e desenvolvimento em cada etapa.</p>
+                <a href="#projetos" class="btn-outline hover-target magnetic click-target">Veja meu trabalho</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="servicos">
+        <div class="services-container">
+            <span class="section-tag">// Serviços</span>
+
+            <div class="service-category spotlight-card">
+                <div class="service-big-num">01</div>
+                <div class="service-content-wrapper">
+                    <div class="service-header">
+                        <h3 class="scramble">Product Design & Front-End</h3>
+                        <p>Design e desenvolvimento de interfaces modernas, focadas em experiência do usuário, performance e estética digital.</p>
+                    </div>
+                    <div class="service-list">
+                        <div class="service-row hover-target"><span>UI/UX Design</span> <span class="row-num">01</span></div>
+                        <div class="service-row hover-target"><span>Wireframes & Prototyping</span> <span class="row-num">02</span></div>
+                        <div class="service-row hover-target"><span>Front-End Development</span> <span class="row-num">03</span></div>
+                        <div class="service-row hover-target"><span>Design Systems</span> <span class="row-num">04</span></div>
+                        <div class="service-row hover-target"><span>Landing Pages & Websites</span> <span class="row-num">05</span></div>
+                        <div class="service-row hover-target"><span>UX Optimization</span> <span class="row-num">06</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-category spotlight-card">
+                <div class="service-big-num">02</div>
+                <div class="service-content-wrapper">
+                    <div class="service-header">
+                        <h3 class="scramble">Website Design</h3>
+                        <p>Design e desenvolvimento de websites modernos, focados em performance, experiência do usuário e responsividade.</p>
+                    </div>
+                    <div class="service-list">
+                        <div class="service-row hover-target"><span>Landing Pages</span> <span class="row-num">01</span></div>
+                        <div class="service-row hover-target"><span>Business & Corporate Websites</span> <span class="row-num">02</span></div>
+                        <div class="service-row hover-target"><span>Web Applications UI</span> <span class="row-num">03</span></div>
+                        <div class="service-row hover-target"><span>E-commerce Interfaces</span> <span class="row-num">04</span></div>
+                        <div class="service-row hover-target"><span>Responsive Design</span> <span class="row-num">05</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="projetos">
+        <div class="projects-container">
+            <span class="section-tag">// Projetos</span>
+            <div class="projects-stack">
+                <div class="project-card spotlight-card" data-color="rgba(0, 40, 100, 0.4)">
+                    <div class="project-content">
+                        <div class="project-info">
+                            <h3 class="scramble">Turingbox</h3>
+                            <p>TuringBox é um sistema web para gerenciar o empréstimo de dispositivos tecnológicos, permitindo solicitações online e controle administrativo de pedidos e devoluções.</p>
+                            <a href="turingbox.html" class="btn-outline hover-target magnetic click-target">Ver Projeto</a>
+                        </div>
+                        <div class="project-visual hover-target">
+                            <img src="img/turingbox-thumb.png" alt="Turingbox" class="parallax-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card spotlight-card" data-color="rgba(80, 0, 100, 0.4)">
+                    <div class="project-content">
+                        <div class="project-info">
+                            <h3 class="scramble">Em desenvolvimento</h3>
+                            <p>Em produção</p>
+                        </div>
+                        <div class="project-visual hover-target">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section" id="depoimentos">
+        <div class="testimonials-container">
+            <span class="section-tag">// Depoimentos</span>
+            <div class="testimonial-content">
+                <div class="testimonial-counter"><span class="current">01</span><span class="total">/03</span></div>
+                <div class="testimonial-body">
+                    <h2 class="reveal-text">
+                        <span>“Seu</span> <span>olhar</span> <span>apurado</span> <span>para</span> <span>detalhes</span> <span>e</span> <span>abordagem</span> <span>inovadora</span> 
+                        <span class="text-highlight">impressionaram</span> <span class="text-highlight">nossa</span> <span class="text-highlight">equipe,</span> <span class="text-highlight">transformando</span> <span class="text-highlight">desafios</span> <span class="text-highlight">em</span> <span class="text-highlight">soluções</span> <span class="text-highlight">criativas</span> <span class="text-highlight">que</span> <span>o</span> <span>destacam.”</span>
+                    </h2>
+                    <div class="testimonial-author">
+                        <h4>// Adriana Quirino</h4><p>Fundadora, Driko Quirino</p>
+                    </div>
+                </div>
+                <div class="testimonial-avatars">
+                    <img src="img/foto-adriana.png" alt="Adriana Quirino" class="avatar active hover-target click-target magnetic">
+                    <img src="img/foto-fernanda.png" alt="Fernanda Cristina" class="avatar hover-target click-target magnetic">
+                    <img src="img/foto-anderson.png" alt="Anderson Ramos" class="avatar hover-target click-target magnetic">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-reveal-section">
+        <div class="skills-reveal-container">
+            <span class="section-tag">// Ferramentas</span>
+            <ul class="skills-list">
+                <li class="skill-item scramble" data-img="img/logos/figma.png">Figma</li>
+                <li class="skill-item scramble" data-img="img/logos/adobe-illustrator.png">Illustrator</li>
+                <li class="skill-item scramble" data-img="img/logos/adobe-photoshop.png">Photoshop</li>
+                <li class="skill-item scramble" data-img="img/logos/html5.png">HTML5</li>
+                <li class="skill-item scramble" data-img="img/logos/css3.png">CSS3</li>
+                <li class="skill-item scramble" data-img="img/logos/javascript.png">JavaScript</li>
+                <li class="skill-item scramble" data-img="img/logos/typescript.png">TypeScript</li>
+                <li class="skill-item scramble" data-img="img/logos/react.png">React</li>
+                <li class="skill-item scramble" data-img="img/logos/tailwind.png">Tailwind CSS</li>
+                <li class="skill-item scramble" data-img="img/logos/gsap.png">GSAP</li>
+            </ul>
+        </div>
+    </section>
+    <div class="hover-reveal-img"></div>
+
+    <footer class="contact-section" id="contato">
+        <div class="contact-minimal-email">
+            <strong>E-mail:</strong> 
+            <a href="#" class="hover-target scramble copy-email click-target" id="email-link">joaoviux@gmail.com</a>
+            
+            <div class="local-time-wrapper">
+                Local time: Rio de Janeiro, BR • <span id="local-time">--:--</span>
+            </div>
+        </div>
+        
+        <a href="#top" class="back-to-top hover-target magnetic click-target" title="Voltar ao Topo">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
