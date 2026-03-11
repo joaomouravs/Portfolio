@@ -215,7 +215,47 @@ cards.forEach((card, i) => {
 });
 
 // =========================================
-// 11. NAVBAR MENU E REVEAL TEXT
+// 11. EFEITO 3D MAGNÉTICO (TILT CARDS)
+// =========================================
+const tiltCards = document.querySelectorAll('.tilt-card');
+if (window.innerWidth > 768 && tiltCards.length > 0) {
+    tiltCards.forEach(card => {
+        // Pega a imagem se existir, senão pega o próprio card
+        const targetToAnimate = card.querySelector('img') || card;
+        
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const xOrigin = (x / rect.width) - 0.5;
+            const yOrigin = (y / rect.height) - 0.5;
+            
+            const rotateY = xOrigin * 15;
+            const rotateX = yOrigin * -15;
+            
+            gsap.to(targetToAnimate, { 
+                rotationY: rotateY, 
+                rotationX: rotateX, 
+                transformPerspective: 1000, 
+                ease: "power2.out", 
+                duration: 0.5 
+            });
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            gsap.to(targetToAnimate, { 
+                rotationY: 0, 
+                rotationX: 0, 
+                ease: "elastic.out(1, 0.3)", 
+                duration: 1.2 
+            });
+        });
+    });
+}
+
+// =========================================
+// 12. NAVBAR MENU E REVEAL TEXT
 // =========================================
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
@@ -227,12 +267,12 @@ if(menuBtn) {
 gsap.utils.toArray(".reveal-text").forEach(text => gsap.to(text.querySelectorAll("span"), { scrollTrigger: { trigger: text, start: "top 85%", end: "bottom 45%", scrub: 1 }, opacity: 1, stagger: 0.2 }));
 
 // =========================================
-// 12. TEXTO DESLIZANTE DO FUNDO (ATIVADO SEMPRE)
+// 13. TEXTO DESLIZANTE DO FUNDO (ATIVADO SEMPRE)
 // =========================================
 gsap.to(".glass-text", { attr: { x: "-300%" }, duration: 50, ease: "none", repeat: -1 });
 
 // =========================================
-// 13. RODAPÉ FINAL MÁGICO (GET IN TOUCH)
+// 14. RODAPÉ FINAL MÁGICO (GET IN TOUCH)
 // =========================================
 const tickerMain = document.querySelector("#ticker-main");
 const tickerContact = document.querySelector("#ticker-contact");
@@ -253,7 +293,7 @@ ScrollTrigger.create({
 });
 
 // =========================================
-// 14. DEPOIMENTOS (TROCA DE FOTOS E TEXTO)
+// 15. DEPOIMENTOS (TROCA DE FOTOS E TEXTO)
 // =========================================
 const depoimentosData = [
     { 
@@ -310,7 +350,7 @@ if(avatars.length > 0) {
 }
 
 // =========================================
-// 15. CORREÇÃO: SETA "VOLTAR AO TOPO"
+// 16. CORREÇÃO: SETA "VOLTAR AO TOPO"
 // =========================================
 const backToTopBtns = document.querySelectorAll('.back-to-top');
 

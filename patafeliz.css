@@ -1,0 +1,172 @@
+/* =========================================
+   ESTILOS EXCLUSIVOS: PATAFELIZ.HTML
+   ========================================= */
+
+/* 1. Painel Minimalista de Metadados */
+.project-meta-panel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.meta-item span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    color: #2563EB; /* Atualizado para o Azul do Pata Feliz */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+}
+.meta-item p, .meta-item a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.meta-item a:hover { color: #2563EB; /* Atualizado para o Azul do Pata Feliz */ }
+
+/* 2. Layout Lateral da Timeline e Conteúdo */
+.project-body-wrapper {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 60px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 60px 120px 60px;
+    position: relative;
+}
+
+/* 3. Linha do Tempo (Scroll Timeline) */
+.timeline-sidebar {
+    position: sticky;
+    top: 150px;
+    height: 400px;
+    display: flex;
+    gap: 30px;
+}
+.timeline-line {
+    width: 2px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+.timeline-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%; /* O JS vai controlar essa altura */
+    background: #2563EB; /* Atualizado para o Azul do Pata Feliz */
+}
+.timeline-steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.timeline-steps .step {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    transition: color 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.timeline-steps .step.active {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 4. Showcase de Design System */
+.design-system-section {
+    margin-bottom: 120px;
+}
+.ds-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    margin-top: 40px;
+}
+.ds-colors {
+    display: flex;
+    gap: 20px;
+}
+.color-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.color-box:hover { transform: scale(1.1); }
+.color-box span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.color-box:hover span { opacity: 1; }
+
+.ds-typography .font-primary {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 5vw, 4rem);
+    margin-bottom: 15px;
+    letter-spacing: -2px;
+}
+.ds-typography .font-secondary {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.2rem;
+    color: #888;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* 5. Revelação em Cortina (Clip-path) e Tilt 3D */
+.project-content-right {
+    min-width: 0;
+}
+.project-gallery-section {
+    padding: 0; /* Removido padding interno pois o wrapper já tem */
+}
+/* Cortina: Esconde a imagem inicialmente com um polígono fechado no topo */
+.clip-reveal {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+}
+/* Quando a classe 'revealed' entra (via JS), a imagem abre para baixo */
+.clip-reveal.revealed {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Base para o Tilt 3D */
+.tilt-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+.tilt-card img {
+    will-change: transform;
+}
+
+/* =========================================
+   RESPONSIVIDADE DAS FEATURES
+   ========================================= */
+@media (max-width: 768px) {
+    .project-meta-panel { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .project-body-wrapper { grid-template-columns: 1fr; padding: 0 20px 80px 20px; gap: 40px;}
+    
+    /* Oculta a linha do tempo no mobile para limpar a tela */
+    .timeline-sidebar { display: none; }
+    
+    .ds-colors { flex-wrap: wrap; }
+    .color-box { width: 80px; height: 80px; }
+}
