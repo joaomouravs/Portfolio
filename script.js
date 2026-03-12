@@ -198,11 +198,24 @@ document.querySelectorAll('.click-target').forEach(el => el.addEventListener('cl
 // =========================================
 const dynamicBgLayer = document.querySelector('.dynamic-bg-layer');
 const cards = gsap.utils.toArray(".project-card");
+
 cards.forEach((card, i) => {
+    // Animação de Fade e Scale apenas quando o PRÓXIMO card sobe
     if (i !== cards.length - 1) { 
-        gsap.to(card, { scale: 0.9, opacity: 0.4, scrollTrigger: { trigger: card, start: "top 10%", endTrigger: ".projects-stack", end: "bottom bottom", scrub: true }}); 
+        const nextCard = cards[i + 1];
+        gsap.to(card, { 
+            scale: 0.9, 
+            opacity: 0.3, 
+            scrollTrigger: { 
+                trigger: nextCard, // A mágica está aqui: olha pro próximo card
+                start: "top 85%",  // Começa a apagar quando o próximo card aparece na tela
+                end: "top 15%",    // Termina de apagar quando ele cobrir o atual
+                scrub: true 
+            }
+        }); 
     }
     
+    // Troca a cor do fundo da tela (Spotlight dinâmico)
     if(dynamicBgLayer && card.dataset.color) {
         ScrollTrigger.create({
             trigger: card, start: "top 50%", end: "bottom 50%",

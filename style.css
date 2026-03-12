@@ -115,7 +115,26 @@ a, button, .avatar, .skill-item, .hover-target { cursor: none; }
 /* =========================================
    6. PROJETOS STACKING & PARALLAX
    ========================================= */
-.project-card { position: sticky; top: 12vh; height: 75vh; background: #0d0d0d; border-radius: 40px; margin-bottom: 12vh; padding: 60px; display: flex; align-items: center; gap: 60px;}
+.project-card { 
+    position: sticky; 
+    top: 12vh; 
+    height: 75vh; 
+    background: #0d0d0d; 
+    border-radius: 40px; 
+    margin-bottom: 12vh; 
+    padding: 60px; 
+    display: flex; 
+    align-items: center; 
+    gap: 60px;
+    isolation: isolate; /* BLOQUEIA O VAZAMENTO DE TEXTO */
+}
+
+/* Garante que o Card de baixo sempre cubra o de cima */
+.project-card:nth-child(1) { z-index: 1; }
+.project-card:nth-child(2) { z-index: 2; }
+.project-card:nth-child(3) { z-index: 3; }
+.project-card:nth-child(4) { z-index: 4; }
+
 .project-content { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; width: 100%; align-items: center; }
 
 /* Flexbox para os novos cards sem grid wrapper */
