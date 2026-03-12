@@ -200,16 +200,16 @@ const dynamicBgLayer = document.querySelector('.dynamic-bg-layer');
 const cards = gsap.utils.toArray(".project-card");
 
 cards.forEach((card, i) => {
-    // Animação de Fade e Scale apenas quando o PRÓXIMO card sobe
+    // Animação de escala e escurecimento (SEM TRANSPARÊNCIA!)
     if (i !== cards.length - 1) { 
         const nextCard = cards[i + 1];
         gsap.to(card, { 
             scale: 0.9, 
-            opacity: 0.3, 
+            filter: "brightness(0.3)", // Deixa o card escuro (profundidade) em vez de transparente
             scrollTrigger: { 
-                trigger: nextCard, // A mágica está aqui: olha pro próximo card
-                start: "top 85%",  // Começa a apagar quando o próximo card aparece na tela
-                end: "top 15%",    // Termina de apagar quando ele cobrir o atual
+                trigger: nextCard, 
+                start: "top 90%",  // Começa o efeito um pouco antes do próximo card encostar
+                end: "top 15%",    // Termina de escurecer quando o próximo card cobrir
                 scrub: true 
             }
         }); 
