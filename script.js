@@ -200,16 +200,17 @@ const dynamicBgLayer = document.querySelector('.dynamic-bg-layer');
 const cards = gsap.utils.toArray(".project-card");
 
 cards.forEach((card, i) => {
-    // Animação de escala e escurecimento (SEM TRANSPARÊNCIA!)
+    // Animação de escala e escurecimento ultra-suave
     if (i !== cards.length - 1) { 
         const nextCard = cards[i + 1];
         gsap.to(card, { 
-            scale: 0.9, 
-            filter: "brightness(0.3)", // Deixa o card escuro (profundidade) em vez de transparente
+            scale: 0.92, // Um encolhimento mais sutil e elegante
+            filter: "brightness(0.3)", 
+            ease: "none",
             scrollTrigger: { 
                 trigger: nextCard, 
-                start: "top 90%",  // Começa o efeito um pouco antes do próximo card encostar
-                end: "top 15%",    // Termina de escurecer quando o próximo card cobrir
+                start: "top 95%",  // Começa o efeito bem suavemente antes de bater
+                end: "top 12%",    // Termina perfeitamente onde o card trava
                 scrub: true 
             }
         }); 
