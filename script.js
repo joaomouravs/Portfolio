@@ -387,3 +387,33 @@ if (backToTopBtns.length > 0) {
         });
     });
 }
+
+// ==========================================
+// Efeito de Esconder/Mostrar Navbar no Scroll
+// ==========================================
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    // Pega a posição atual do scroll
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Se estiver muito perto do topo, garante que a navbar fique sempre visível
+    if (scrollTop < 50) {
+        navbar.classList.remove('nav-hidden');
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        return;
+    }
+
+    // Compara a posição atual com a anterior
+    if (scrollTop > lastScrollTop) {
+        // Rolando para BAIXO - Esconde a navbar
+        navbar.classList.add('nav-hidden');
+    } else {
+        // Rolando para CIMA - Mostra a navbar
+        navbar.classList.remove('nav-hidden');
+    }
+    
+    // Atualiza a última posição do scroll (evita bugs no scroll elástico do mobile)
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});

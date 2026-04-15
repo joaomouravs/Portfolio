@@ -334,3 +334,12 @@ a, button, .avatar, .skill-item, .hover-target { cursor: none; }
     .more-projects-section { padding: 0 20px 80px 20px; }
     .more-project-img-wrapper { height: 50vh; border-radius: 10px; }
 }
+
+/* Animação de esconder a Navbar */
+.navbar {
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.2, 1), background-color 0.3s ease;
+}
+
+.navbar.nav-hidden {
+    transform: translateY(-100%);
+}
