@@ -120,6 +120,18 @@ if(emailLink) {
     });
 }
 
+// 6.1 COPIAR E-MAIL — páginas internas de projeto (.copy-email)
+document.querySelectorAll('.copy-email').forEach(link => {
+    if (link.id === 'email-link') return; // já tratado acima
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        navigator.clipboard.writeText("joaoviux@gmail.com");
+        const original = link.textContent;
+        link.textContent = "E-MAIL COPIADO! ✔";
+        setTimeout(() => { link.textContent = original; }, 2000);
+    });
+});
+
 // =========================================
 // 7. TEXT SCRAMBLE (HACKER EFFECT)
 // =========================================
