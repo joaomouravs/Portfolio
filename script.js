@@ -213,25 +213,27 @@ document.querySelectorAll('.click-target').forEach(el => el.addEventListener('cl
 // =========================================
 const dynamicBgLayer = document.querySelector('.dynamic-bg-layer');
 const cards = gsap.utils.toArray(".project-card");
-const isDesktop = window.innerWidth > 768;
+
+// estado inicial limpo (garante reversão suave do filtro)
+gsap.set(cards, { filter: "brightness(1)" });
 
 cards.forEach((card, i) => {
-    // Animação de escala e escurecimento ultra-suave (apenas desktop — no mobile os cards ficam em fluxo normal)
-    if (isDesktop && i !== cards.length - 1) { 
+    // EFEITO BARALHO: ao ser coberto pelo próximo, o card recua — encolhe e escurece de leve
+    if (i !== cards.length - 1) {
         const nextCard = cards[i + 1];
-        gsap.to(card, { 
-            scale: 0.92, // Um encolhimento mais sutil e elegante
-            filter: "brightness(0.3)", 
+        gsap.to(card, {
+            scale: 0.93,
+            filter: "brightness(0.62)",
             ease: "none",
-            scrollTrigger: { 
-                trigger: nextCard, 
-                start: "top 95%",  // Começa o efeito bem suavemente antes de bater
-                end: "top 12%",    // Termina perfeitamente onde o card trava
-                scrub: true 
+            scrollTrigger: {
+                trigger: nextCard,
+                start: "top 90%",   // começa quando o próximo se aproxima
+                end: "top 13%",     // termina quando o próximo trava no topo (deck)
+                scrub: 0.5          // leve amortecimento = sensação premium
             }
-        }); 
+        });
     }
-    
+
     // Troca a cor do fundo da tela (Spotlight dinâmico)
     if(dynamicBgLayer && card.dataset.color) {
         ScrollTrigger.create({
@@ -243,19 +245,6 @@ cards.forEach((card, i) => {
         });
     }
 });
-
-// Entrada suave dos cards no mobile (fade + slide), substitui o efeito de stacking
-if (!isDesktop) {
-    cards.forEach((card) => {
-        gsap.from(card, {
-            opacity: 0,
-            y: 40,
-            duration: 0.7,
-            ease: "power3.out",
-            scrollTrigger: { trigger: card, start: "top 88%" }
-        });
-    });
-}
 
 // =========================================
 // 11. EFEITO 3D MAGNÉTICO (TILT CARDS)
