@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#EFEDE6">
+    <meta name="theme-color" content="#000000">
     <title>Refúgio — Cabanas Autorais</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..800;1,400..800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@700;900&family=Schibsted+Grotesk:ital,wght@0,400..800;1,400..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
@@ -25,12 +25,12 @@
     </script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
-<body id="top" class="project-page refugio-page">
+<body id="top" class="project-page refugio-page" style="background: transparent;">
 
     <div class="page-transition"></div>
 
-    <div class="preloader project-preloader" style="background-color: #EFEDE6;">
-        <div class="preloader-counter" style="color: #C56B2C;">0%</div>
+    <div class="preloader project-preloader" style="background-color: #0d0d0d;">
+        <div class="preloader-counter" style="color: #FF4400;">0%</div>
     </div>
 
     <div class="scroll-progress"></div>
@@ -40,6 +40,11 @@
     <button class="sound-toggle hover-target magnetic" aria-label="Toggle Sound">
         <i class="fa-solid fa-volume-xmark"></i>
     </button>
+
+    <div class="background-container" style="z-index: 0;">
+        <img src="img/perfil.png" alt="Perfil" class="background-image">
+        <div class="background-overlay"></div>
+    </div>
 
     <div class="liquid-glass-ticker" id="ticker-contact" aria-hidden="true" style="opacity: 0; z-index: 1; pointer-events: none;">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -51,17 +56,17 @@
                 </mask>
             </defs>
             <g mask="url(#text-mask-contact)">
-                <image class="glass-bg-image" href="img/perfil-refugio.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
-                <rect width="100%" height="100%" fill="rgba(197, 107, 44, 0.10)" />
+                <image class="glass-bg-image" href="img/perfil.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                <rect width="100%" height="100%" fill="rgba(255, 255, 255, 0.08)" />
             </g>
-            <text class="glass-text" x="100%" y="50%" dominant-baseline="central" fill="none" stroke="rgba(22,21,15,0.16)" stroke-width="2">
+            <text class="glass-text" x="100%" y="50%" dominant-baseline="central" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2">
                 GET IN TOUCH - GET IN TOUCH &nbsp;&nbsp;&nbsp; GET IN TOUCH - GET IN TOUCH
             </text>
         </svg>
     </div>
 
     <nav class="navbar" style="background: transparent; backdrop-filter: none; z-index: 200;">
-        <a href="index.html" class="logo scramble hover-target click-target" style="text-decoration: none;">© VOLTAR PARA HOME</a>
+        <a href="index.html" class="logo scramble hover-target click-target" style="color: #fff; text-decoration: none;">© VOLTAR PARA HOME</a>
     </nav>
 
     <!-- ============================ HERO ============================ -->
@@ -91,14 +96,14 @@
 
     <div class="marquee-tape" style="position: relative; z-index: 2;">
         <div class="marquee-content">
-            <span>REFÚGIO • CABANAS AUTORAIS • NEXT.JS • SUPABASE • ASAAS • RESEND • GSAP • UI DESIGN & FULL-STACK DEV • 2026 • </span>
-            <span>REFÚGIO • CABANAS AUTORAIS • NEXT.JS • SUPABASE • ASAAS • RESEND • GSAP • UI DESIGN & FULL-STACK DEV • 2026 • </span>
-            <span>REFÚGIO • CABANAS AUTORAIS • NEXT.JS • SUPABASE • ASAAS • RESEND • GSAP • UI DESIGN & FULL-STACK DEV • 2026 • </span>
+            <span>STACK: NEXT.JS, SUPABASE, ASAAS, RESEND, GSAP • ANO: 2026 • ROLE: UI DESIGN & FULL-STACK DEV • </span>
+            <span>STACK: NEXT.JS, SUPABASE, ASAAS, RESEND, GSAP • ANO: 2026 • ROLE: UI DESIGN & FULL-STACK DEV • </span>
+            <span>STACK: NEXT.JS, SUPABASE, ASAAS, RESEND, GSAP • ANO: 2026 • ROLE: UI DESIGN & FULL-STACK DEV • </span>
         </div>
     </div>
 
     <!-- ========================= PANORAMA ========================= -->
-    <section class="project-info-section" style="position: relative; z-index: 2;">
+    <section class="project-info-section" style="position: relative; z-index: 2; background: #000;">
         <h1 class="project-main-title scramble">Refúgio<span class="dot">.</span></h1>
         <div class="project-overview-grid">
             <span class="section-tag">// Panorama geral</span>
@@ -116,7 +121,7 @@
     </section>
 
     <!-- ===================== CORPO + TIMELINE ===================== -->
-    <section class="project-body-wrapper" style="position: relative; z-index: 2;">
+    <section class="project-body-wrapper" style="position: relative; z-index: 2; background: #000;">
 
         <div class="timeline-sidebar">
             <div class="timeline-line">
@@ -208,7 +213,7 @@
                 </div>
             </div>
 
-            <!-- ===== GALERIA — EXPERIÊNCIA ===== -->
+            <!-- ===== GALERIA ===== -->
             <div class="project-gallery-section">
 
                 <div class="gallery-block clip-reveal" id="step-2">
@@ -244,33 +249,30 @@
                     </div>
                 </div>
 
-                <!-- ===== BANDA ESCURA · DIÁRIO ===== -->
-                <div class="refugio-diario clip-reveal">
-                    <div class="diario-head">
-                        <span class="diario-eyebrow">// Diário de campo</span>
-                        <h2 class="diario-title">Quando a luz acende lá dentro, <em>o trabalho muda de tom.</em></h2>
+                <div class="diario-divider clip-reveal">
+                    <span class="lbl">// Diário de campo</span>
+                    Quando a luz acende lá dentro, <em>o trabalho muda de tom.</em>
+                </div>
+
+                <div class="gallery-block clip-reveal">
+                    <div class="shot-caption">
+                        <span class="sc-index">04 — Diário</span>
+                        <span class="sc-title">Modo noturno editorial</span>
+                        <span class="sc-note">Geada na janela, lareira acesa</span>
                     </div>
-                    <div class="diario-shots">
-                        <div class="gallery-block">
-                            <div class="shot-caption">
-                                <span class="sc-index">04 — Diário</span>
-                                <span class="sc-title">Modo noturno editorial</span>
-                                <span class="sc-note">Geada na janela, lareira acesa</span>
-                            </div>
-                            <div class="shot hover-target" data-cursor-text="VIEW">
-                                <img src="img/refugio-4.png" alt="Refúgio — seção diário em tema escuro">
-                            </div>
-                        </div>
-                        <div class="gallery-block">
-                            <div class="shot-caption">
-                                <span class="sc-index">05 — Em números</span>
-                                <span class="sc-title">44 refúgios · 9 estados · 100% vista</span>
-                                <span class="sc-note">Sócios reservam antes de todos</span>
-                            </div>
-                            <div class="shot hover-target" data-cursor-text="VIEW">
-                                <img src="img/refugio-5.png" alt="Refúgio — estatísticas da sociedade">
-                            </div>
-                        </div>
+                    <div class="shot hover-target" data-cursor-text="VIEW">
+                        <img src="img/refugio-4.png" alt="Refúgio — seção diário em tema escuro">
+                    </div>
+                </div>
+
+                <div class="gallery-block clip-reveal">
+                    <div class="shot-caption">
+                        <span class="sc-index">05 — Em números</span>
+                        <span class="sc-title">44 refúgios · 9 estados · 100% vista</span>
+                        <span class="sc-note">Sócios reservam antes de todos</span>
+                    </div>
+                    <div class="shot hover-target" data-cursor-text="VIEW">
+                        <img src="img/refugio-5.png" alt="Refúgio — estatísticas da sociedade">
                     </div>
                 </div>
 
@@ -285,7 +287,6 @@
                     </div>
                 </div>
 
-                <!-- ===== GALERIA — SOCIEDADE ===== -->
                 <div class="gallery-block clip-reveal" id="step-3">
                     <div class="shot-caption">
                         <span class="sc-index">07 — Planos</span>
@@ -311,7 +312,7 @@
                 <div class="gallery-block clip-reveal">
                     <div class="shot-caption">
                         <span class="sc-index">09 — Assinatura</span>
-                        <span class="sc-title">refúgio<span style="color:#C56B2C;">.</span></span>
+                        <span class="sc-title">refúgio<span style="color:#FF4400;">.</span></span>
                         <span class="sc-note">O ponto de fuga da marca</span>
                     </div>
                     <div class="shot hover-target" data-cursor-text="VIEW">
@@ -324,7 +325,7 @@
     </section>
 
     <!-- ===================== MAIS PROJETOS ===================== -->
-    <section class="more-projects-section" style="position: relative; z-index: 2; padding-bottom: 200px;">
+    <section class="more-projects-section" style="position: relative; z-index: 2; background: #000; padding-bottom: 200px;">
         <span class="section-tag">// Mais Projetos</span>
         <div class="more-projects-grid">
             <a href="solen.html" class="more-project-card click-target">
@@ -350,7 +351,7 @@
     </section>
 
     <!-- ===================== RODAPÉ ===================== -->
-    <footer class="contact-section project-footer" id="contato" style="pointer-events: none; z-index: 2;">
+    <footer class="contact-section project-footer" id="contato" style="background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.5) 30%, transparent 100%); pointer-events: none; z-index: 2;">
         <div class="contact-minimal-email" style="pointer-events: auto;">
             <strong>E-mail:</strong>
             <a href="#" class="hover-target scramble copy-email click-target" id="email-link-interno">joaoviux@gmail.com</a>

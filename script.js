@@ -21,13 +21,16 @@ requestAnimationFrame(raf);
 // =========================================
 let progress = { value: 0 };
 gsap.to(progress, {
-    value: 100, duration: 2.0, ease: "power3.inOut",
+    value: 100, duration: 1.3, ease: "power2.inOut",
     onUpdate: () => {
         let counter = document.querySelector(".preloader-counter");
         if(counter) counter.textContent = Math.floor(progress.value) + "%";
     },
     onComplete: () => {
-        gsap.to(".preloader", { yPercent: -100, duration: 1, ease: "power4.inOut" });
+        gsap.to(".preloader", { 
+            yPercent: -100, duration: 0.8, ease: "power4.inOut",
+            onComplete: () => { const pl = document.querySelector(".preloader"); if(pl) pl.style.display = "none"; }
+        });
     }
 });
 
@@ -210,10 +213,11 @@ document.querySelectorAll('.click-target').forEach(el => el.addEventListener('cl
 // =========================================
 const dynamicBgLayer = document.querySelector('.dynamic-bg-layer');
 const cards = gsap.utils.toArray(".project-card");
+const isDesktop = window.innerWidth > 768;
 
 cards.forEach((card, i) => {
-    // Animação de escala e escurecimento ultra-suave
-    if (i !== cards.length - 1) { 
+    // Animação de escala e escurecimento ultra-suave (apenas desktop — no mobile os cards ficam em fluxo normal)
+    if (isDesktop && i !== cards.length - 1) { 
         const nextCard = cards[i + 1];
         gsap.to(card, { 
             scale: 0.92, // Um encolhimento mais sutil e elegante
@@ -239,6 +243,19 @@ cards.forEach((card, i) => {
         });
     }
 });
+
+// Entrada suave dos cards no mobile (fade + slide), substitui o efeito de stacking
+if (!isDesktop) {
+    cards.forEach((card) => {
+        gsap.from(card, {
+            opacity: 0,
+            y: 40,
+            duration: 0.7,
+            ease: "power3.out",
+            scrollTrigger: { trigger: card, start: "top 88%" }
+        });
+    });
+}
 
 // =========================================
 // 11. EFEITO 3D MAGNÉTICO (TILT CARDS)
