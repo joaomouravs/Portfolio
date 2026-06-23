@@ -122,10 +122,10 @@
 }
 .refugio-hero {
     min-height: 100vh;
-    padding: 120px 60px 48px;
+    padding: 100px 60px 44px;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    gap: 32px;
+    gap: 28px;
 }
 .refugio-hero-top,
 .refugio-hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; }
@@ -133,8 +133,8 @@
 .rh-coord { font-size: 0.72rem; letter-spacing: 0.18em; color: #777; font-variant-numeric: tabular-nums; }
 .refugio-hero-center { display: flex; justify-content: center; align-items: center; }
 .refugio-hero-poster {
-    width: clamp(260px, 30vw, 400px);
-    height: clamp(420px, 64vh, 660px);
+    width: clamp(240px, 28vw, 380px);
+    height: clamp(360px, 52vh, 580px);
     border-radius: 18px;
     overflow: hidden;
     background: var(--cream);
@@ -144,6 +144,7 @@
 .refugio-hero-poster img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s cubic-bezier(0.16,1,0.3,1); }
 
 .refugio-hero-bottom { align-items: flex-end; }
+.rh-bottom-left { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; }
 .rh-tagline { max-width: 560px; font-family: 'DM Sans', sans-serif; font-size: clamp(1.1rem, 2vw, 1.55rem); line-height: 1.4; color: #cfcfcf; letter-spacing: -0.01em; }
 .rh-tagline .font-serif { color: #fff; font-size: 1.15em; }
 .rh-scroll { font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #777; white-space: nowrap; display: flex; align-items: center; gap: 10px; }
@@ -240,8 +241,70 @@
 }
 
 /* ---------------------------------------------------------------
-   RESPONSIVIDADE
+   CTA — Ver site ao vivo
    --------------------------------------------------------------- */
+.btn-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 34px;
+    background: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    letter-spacing: 0.01em;
+    box-shadow: 0 18px 40px -18px rgba(255,68,0,0.55);
+    transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), box-shadow 0.45s cubic-bezier(0.16,1,0.3,1), background 0.3s ease;
+}
+.btn-live i { font-size: 0.85em; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); }
+@media (hover: hover) and (pointer: fine) {
+    .btn-live:hover { transform: translateY(-3px); box-shadow: 0 26px 52px -16px rgba(255,68,0,0.75); }
+    .btn-live:hover i { transform: translate(3px, -3px); }
+}
+
+/* CTA de fechamento (após a galeria) */
+.refugio-cta {
+    margin-top: 30px;
+    padding: 72px 48px;
+    border: 1px solid var(--hairline);
+    border-radius: 24px;
+    background:
+        radial-gradient(120% 140% at 50% 0%, rgba(255,68,0,0.10), transparent 60%),
+        var(--surface2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.refugio-cta .rcta-eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+}
+.refugio-cta .rcta-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 16ch;
+}
+.refugio-cta .rcta-sub {
+    font-family: 'DM Sans', sans-serif;
+    color: #9a9a9a;
+    font-size: 1.02rem;
+    line-height: 1.5;
+    max-width: 46ch;
+    margin-bottom: 12px;
+}
 @media (max-width: 1024px) {
     .refugio-hero { padding: 110px 40px 40px; }
     .refugio-hero-poster { width: min(46vw, 360px); height: 60vh; }
@@ -277,6 +340,9 @@
     .shot { border-radius: 12px; }
     .shot-caption { flex-wrap: wrap; gap: 6px; }
     .shot-caption .sc-note { text-align: left; flex-basis: 100%; }
+
+    .refugio-cta { padding: 48px 24px; margin-top: 18px; }
+    .btn-live { padding: 15px 28px; font-size: 0.88rem; }
 }
 
 @media (max-width: 420px) {

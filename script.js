@@ -41,8 +41,8 @@ document.querySelectorAll('a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const target = this.getAttribute('href');
         
-        // Ignora links de âncora (#) e e-mail (mailto:)
-        if (!target || target.startsWith('#') || target.startsWith('mailto')) return;
+        // Ignora âncoras (#), e-mail (mailto:), abas novas (target="_blank") e links externos (http/https)
+        if (!target || target.startsWith('#') || target.startsWith('mailto') || this.target === '_blank' || /^https?:\/\//i.test(target)) return;
         
         e.preventDefault(); 
         if (typeof playClick === "function") playClick(); 
