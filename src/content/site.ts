@@ -27,9 +27,7 @@ export const site = {
 export const socials = [
   {
     label: "GitHub",
-    // TODO João: URL real do seu perfil. É o link mais importante da lista
-    // para um posicionamento Full Stack, e o site anterior não tinha nenhum.
-    href: "https://github.com/joaovux",
+    href: "https://github.com/joaomouravs",
     primary: true,
   },
   {
