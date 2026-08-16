@@ -1,11 +1,41 @@
 import type { NextConfig } from "next";
 
 /**
- * Headers de segurança aplicados a todas as rotas.
- * A Content-Security-Policy fica no middleware, porque depende de um nonce
- * gerado por requisição — aqui só entram os headers estáticos.
+ * Content-Security-Policy.
+ *
+ * Aqui vale um registro, porque a primeira versão derrubou o site: ela usava
+ * `'nonce-<valor>' 'strict-dynamic'` gerado por um middleware. O problema é
+ * que `strict-dynamic` faz o navegador ignorar `'self'`, e o Next só carimba
+ * o atributo `nonce` nas tags <script> quando encontra o CSP no header da
+ * *requisição* — o middleware só o punha na resposta. Resultado: nenhum
+ * script tinha nonce, o navegador bloqueou todos, e o preloader ficou preso
+ * na tela cobrindo o site inteiro.
+ *
+ * Esta versão é estática e não depende de nada em runtime: `'self'` libera
+ * os chunks do próprio domínio e continua bloqueando script de terceiro,
+ * que é o ganho principal. Voltar ao nonce é possível, mas só com o CSP
+ * propagado no request e validado em preview antes de ir para produção.
+ *
+ * `'unsafe-inline'` em style-src é inevitável: o Next e o next/image aplicam
+ * estilos inline em atributos, onde não há como anexar nonce.
  */
+const csp = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' blob: data:",
+  "font-src 'self'",
+  "connect-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  "upgrade-insecure-requests",
+].join("; ");
+
+/** Headers de segurança aplicados a todas as rotas. */
 const securityHeaders = [
+  { key: "Content-Security-Policy", value: csp },
   {
     key: "Strict-Transport-Security",
     value: "max-age=63072000; includeSubDomains; preload",
