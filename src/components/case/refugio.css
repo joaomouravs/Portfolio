@@ -1,0 +1,357 @@
+/* =====================================================================
+   REFÚGIO — CASE PAGE
+   Porte fiel de legacy/refugio.css. Todos os valores são os originais.
+   As variáveis de fonte vêm do next/font, aplicadas no wrapper da página.
+   ===================================================================== */
+
+.refugio-page {
+    --bone:      #EFEDE6;
+    --bone2:     #E7E4DB;
+    --cream:     #F7F5EF;
+    --r-ink:     #16150F;
+    --ink2:      #2B2A22;
+    --ash:       #8B887B;
+    --ash2:      #A8A498;
+    --line:      #D8D4C8;
+    --ember:     #C56B2C;
+    --emberSoft: #E0925A;
+    --night:     #131009;
+
+    --accent:    #FF4400;
+    --surface:   #0d0d0d;
+    --surface2:  #111111;
+    --hairline:  rgba(255,255,255,0.08);
+
+    --font-serif: var(--font-instrument-serif), serif;
+    --font-spec:  var(--font-schibsted), sans-serif;
+}
+
+.refugio-page .font-serif { font-family: var(--font-serif); }
+.refugio-page .italic { font-style: italic; }
+
+/* ---------------------------------------------------------------
+   ESTRUTURA BASE
+   --------------------------------------------------------------- */
+.refugio-page .project-meta-panel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+.refugio-page .meta-item span {
+    font-family: var(--font-space-grotesk), sans-serif;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+}
+.refugio-page .meta-item p,
+.refugio-page .meta-item a {
+    font-family: var(--font-dm-sans), sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.refugio-page .meta-item a:hover { color: var(--accent); }
+
+.refugio-page .project-body-wrapper {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 60px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 60px 120px 60px;
+}
+.refugio-page .project-content-right { min-width: 0; }
+
+.refugio-page .timeline-sidebar {
+    position: sticky;
+    top: 150px;
+    height: 400px;
+    display: flex;
+    gap: 30px;
+}
+.refugio-page .timeline-line { width: 2px; height: 100%; background: rgba(255,255,255,0.1); position: relative; }
+.refugio-page .timeline-progress { position: absolute; top: 0; left: 0; width: 100%; height: 0%; background: var(--accent); }
+.refugio-page .timeline-steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.refugio-page .timeline-steps .step {
+    font-family: var(--font-space-grotesk), sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    transition: color 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.refugio-page .timeline-steps .step.active { color: #fff; font-weight: bold; }
+
+.refugio-page .design-system-section { margin-bottom: 120px; }
+.refugio-page .ds-grid { display: grid; grid-template-columns: 1fr; gap: 70px; margin-top: 40px; }
+
+.refugio-page .clip-reveal {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 1.4s cubic-bezier(0.85, 0, 0.15, 1);
+}
+.refugio-page .clip-reveal.revealed { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+.refugio-page .tilt-card { perspective: 1000px; transform-style: preserve-3d; }
+.refugio-page .tilt-card img { will-change: transform; }
+
+/* ---------------------------------------------------------------
+   HERO — pôster da marca sobre fundo escuro
+   --------------------------------------------------------------- */
+.refugio-page .project-hero-wrapper {
+    height: auto;
+    min-height: 100vh;
+    background: #050505;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+}
+.refugio-hero {
+    min-height: 100vh;
+    padding: 100px 60px 44px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 28px;
+}
+.refugio-hero-top,
+.refugio-hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; }
+.rh-eyebrow { font-family: var(--font-space-grotesk), sans-serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.rh-coord { font-size: 0.72rem; letter-spacing: 0.18em; color: #777; font-variant-numeric: tabular-nums; }
+.refugio-hero-center { display: flex; justify-content: center; align-items: center; }
+.refugio-hero-poster {
+    width: clamp(240px, 28vw, 380px);
+    height: clamp(360px, 52vh, 580px);
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--cream);
+    box-shadow: 0 40px 100px -40px rgba(0,0,0,0.9);
+    position: relative;
+}
+.refugio-hero-poster img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+
+.refugio-hero-bottom { align-items: flex-end; }
+.rh-bottom-left { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; }
+.rh-tagline { max-width: 560px; font-family: var(--font-dm-sans), sans-serif; font-size: clamp(1.1rem, 2vw, 1.55rem); line-height: 1.4; color: #cfcfcf; letter-spacing: -0.01em; }
+.rh-tagline .font-serif { color: #fff; font-size: 1.15em; }
+.rh-scroll { font-family: var(--font-space-grotesk), sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #777; white-space: nowrap; display: flex; align-items: center; gap: 10px; }
+.rh-scroll svg { color: var(--accent); animation: rh-bounce 1.8s ease-in-out infinite; }
+@keyframes rh-bounce { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(5px);} }
+
+/* ---------------------------------------------------------------
+   INFO SECTION
+   --------------------------------------------------------------- */
+.refugio-page .project-main-title { font-family: var(--font-space-grotesk), sans-serif; }
+.refugio-page .project-main-title .dot { color: var(--accent); }
+.refugio-page .overview-text p .font-serif { color: #fff; font-size: 1.06em; }
+
+/* ---------------------------------------------------------------
+   GUIA DE ESTILO
+   --------------------------------------------------------------- */
+.refugio-palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.swatch {
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--surface2);
+    transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), border-color 0.4s ease;
+}
+.swatch:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.18); }
+.swatch-chip { height: 92px; width: 100%; border-bottom: 1px solid var(--hairline); }
+.swatch-meta { padding: 14px 16px 16px; }
+.swatch-meta .tok { display: block; font-family: var(--font-space-grotesk), sans-serif; font-weight: 700; font-size: 0.95rem; color: #fff; }
+.swatch-meta .hex { display: block; font-size: 0.74rem; color: #777; font-variant-numeric: tabular-nums; letter-spacing: 0.05em; margin-top: 2px; }
+.swatch-meta .use { display: block; font-size: 0.78rem; color: #999; line-height: 1.4; margin-top: 10px; }
+
+.refugio-type { border-top: 1px solid var(--hairline); padding-top: 46px; display: grid; gap: 48px; }
+.type-block .type-label { font-family: var(--font-space-grotesk), sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 700; display: block; margin-bottom: 18px; }
+.type-sans-display { font-family: var(--font-spec); font-weight: 700; font-size: clamp(2.6rem, 6vw, 5rem); color: #fff; letter-spacing: -0.03em; line-height: 1; }
+.type-sans-name { color: #666; }
+.type-weights { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 22px; color: #aaa; font-family: var(--font-spec); }
+.type-weights .w400 { font-weight: 400; }
+.type-weights .w500 { font-weight: 500; }
+.type-weights .w600 { font-weight: 600; }
+.type-weights .w700 { font-weight: 700; }
+.type-weights .w800 { font-weight: 800; }
+.type-serif-display { font-family: var(--font-serif); font-style: italic; font-size: clamp(2.4rem, 6vw, 4.6rem); color: #fff; line-height: 1.05; }
+.type-serif-examples { margin-top: 18px; color: #888; font-size: 1.05rem; line-height: 1.7; font-family: var(--font-dm-sans), sans-serif; }
+.type-serif-examples em { font-family: var(--font-serif); font-style: italic; color: var(--accent); font-size: 1.25em; }
+
+/* ---------------------------------------------------------------
+   GALERIA
+   --------------------------------------------------------------- */
+.refugio-page .project-gallery-section { padding: 0; gap: 30px; min-width: 0; }
+.refugio-page .project-gallery-section img { max-width: 100%; }
+
+.gallery-block { display: flex; flex-direction: column; gap: 12px; }
+.shot {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--surface2);
+    border: 1px solid var(--hairline);
+    position: relative;
+}
+.shot img { width: 100%; height: auto; display: block; transition: transform 1.1s cubic-bezier(0.16,1,0.3,1); }
+
+.shot-caption { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; margin: 4px 4px 0; }
+.shot-caption .sc-index { font-family: var(--font-space-grotesk), sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; color: var(--accent); font-weight: 700; }
+.shot-caption .sc-title { font-family: var(--font-space-grotesk), sans-serif; font-size: 0.9rem; color: #fff; font-weight: 500; }
+.shot-caption .sc-note { font-size: 0.82rem; color: #777; text-align: right; font-family: var(--font-dm-sans), sans-serif; }
+
+@media (hover: hover) and (pointer: fine) {
+    .shot:hover img { transform: scale(1.02); }
+    .refugio-hero-poster:hover img { transform: scale(1.04); }
+}
+
+/* Destaque do Diário */
+.diario-divider {
+    grid-column: 1 / -1;
+    margin: 10px 0 2px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    color: #fff;
+    line-height: 1.25;
+    max-width: 760px;
+}
+.diario-divider em { color: var(--accent); }
+.diario-divider .lbl {
+    display: block;
+    font-family: var(--font-space-grotesk), sans-serif;
+    font-style: normal;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+/* ---------------------------------------------------------------
+   CTA — Ver site ao vivo
+   --------------------------------------------------------------- */
+.btn-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 34px;
+    background: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: var(--font-space-grotesk), sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    letter-spacing: 0.01em;
+    box-shadow: 0 18px 40px -18px rgba(255,68,0,0.55);
+    transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), box-shadow 0.45s cubic-bezier(0.16,1,0.3,1), background 0.3s ease;
+}
+.btn-live svg { font-size: 0.85em; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); }
+@media (hover: hover) and (pointer: fine) {
+    .btn-live:hover { transform: translateY(-3px); box-shadow: 0 26px 52px -16px rgba(255,68,0,0.75); }
+    .btn-live:hover svg { transform: translate(3px, -3px); }
+}
+
+.refugio-cta {
+    margin-top: 30px;
+    padding: 72px 48px;
+    border: 1px solid var(--hairline);
+    border-radius: 24px;
+    background:
+        radial-gradient(120% 140% at 50% 0%, rgba(255,68,0,0.10), transparent 60%),
+        var(--surface2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.refugio-cta .rcta-eyebrow {
+    font-family: var(--font-space-grotesk), sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+}
+.refugio-cta .rcta-title {
+    font-family: var(--font-space-grotesk), sans-serif;
+    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 16ch;
+}
+.refugio-cta .rcta-sub {
+    font-family: var(--font-dm-sans), sans-serif;
+    color: #9a9a9a;
+    font-size: 1.02rem;
+    line-height: 1.5;
+    max-width: 46ch;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 1024px) {
+    .refugio-hero { padding: 110px 40px 40px; }
+    .refugio-hero-poster { width: min(46vw, 360px); height: 60vh; }
+    .refugio-page .project-meta-panel { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .refugio-page .project-body-wrapper { padding: 0 40px 100px 40px; gap: 44px; }
+    .refugio-palette { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .refugio-hero { padding: 110px 22px 36px; gap: 26px; }
+    .refugio-hero-top { flex-direction: row; align-items: flex-start; }
+    .refugio-hero-center { padding: 8px 0; }
+    .refugio-hero-poster { width: min(72vw, 320px); height: min(110vw, 440px); }
+    .refugio-hero-bottom { flex-direction: column; align-items: flex-start; gap: 22px; }
+    .rh-tagline { font-size: 1.1rem; }
+    .rh-scroll { display: none; }
+
+    .refugio-page .project-body-wrapper { grid-template-columns: 1fr; padding: 0 22px 80px 22px; gap: 36px; }
+    .refugio-page .timeline-sidebar { display: none; }
+    .refugio-page .design-system-section { margin-bottom: 80px; }
+    .refugio-page .ds-grid { gap: 50px; margin-top: 28px; }
+    .refugio-page .project-meta-panel { grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 40px; }
+
+    .refugio-palette { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .swatch-chip { height: 72px; }
+    .swatch-meta { padding: 12px 13px 14px; }
+    .swatch-meta .use { display: none; }
+
+    .refugio-type { padding-top: 36px; gap: 38px; }
+    .type-weights { gap: 16px; }
+
+    .refugio-page .project-gallery-section { gap: 24px; }
+    .shot { border-radius: 12px; }
+    .shot-caption { flex-wrap: wrap; gap: 6px; }
+    .shot-caption .sc-note { text-align: left; flex-basis: 100%; }
+
+    .refugio-cta { padding: 48px 24px; margin-top: 18px; }
+    .btn-live { padding: 15px 28px; font-size: 0.88rem; }
+}
+
+@media (max-width: 420px) {
+    .refugio-hero { padding: 100px 16px 30px; }
+    .refugio-hero-top { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .refugio-hero-poster { width: min(80vw, 300px); height: min(118vw, 420px); }
+    .refugio-palette { grid-template-columns: 1fr 1fr; }
+    .refugio-page .project-meta-panel { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rh-scroll svg { animation: none; }
+    .refugio-page .clip-reveal { clip-path: none; }
+}
