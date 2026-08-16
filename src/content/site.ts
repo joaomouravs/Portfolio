@@ -13,9 +13,9 @@ export const site = {
   location: "Rio de Janeiro, BR",
   timezone: "America/Sao_Paulo",
 
-  // TODO João: trocar pelo domínio final antes do deploy de produção.
-  // Serve de base para canonical, sitemap e Open Graph.
-  url: "https://joaovitor.dev",
+  // Domínio de produção. É a base de canonical, sitemap, Open Graph e
+  // JSON-LD — se estiver errado, o Google indexa endereços que não existem.
+  url: "https://www.joaovux.com.br",
 
   /** Aparece no hero. Remova quando não estiver aceitando projetos. */
   availability: "Disponível para novos projetos",
