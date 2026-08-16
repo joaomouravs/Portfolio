@@ -159,25 +159,17 @@ function setupPreloader(gsap: Gsap, reduced: boolean) {
     return () => {};
   }
 
-  const counter = preloader.querySelector<HTMLElement>(".preloader-counter");
-  const progress = { value: 0 };
-
-  const tween = gsap.to(progress, {
-    value: 100,
-    duration: 1.3,
-    ease: "power2.inOut",
-    onUpdate: () => {
-      if (counter) counter.textContent = `${Math.floor(progress.value)}%`;
-    },
+  // O número em si é animado pelo componente PreloaderCounter, com estado
+  // do React. Aqui cuidamos apenas da saída da cortina — o GSAP não escreve
+  // mais no nó do contador, porque dois donos do mesmo nó era exatamente o
+  // que travava o contador em 0%.
+  const tween = gsap.to(preloader, {
+    yPercent: -100,
+    duration: 0.8,
+    ease: "power4.inOut",
+    delay: 1.3,
     onComplete: () => {
-      gsap.to(preloader, {
-        yPercent: -100,
-        duration: 0.8,
-        ease: "power4.inOut",
-        onComplete: () => {
-          preloader.style.display = "none";
-        },
-      });
+      preloader.style.display = "none";
     },
   });
 

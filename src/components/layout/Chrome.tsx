@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { site } from "@/content/site";
 import { getProject } from "@/lib/projects";
 import { SOUND_OFF_ICON } from "@/components/motion/SiteEffects";
+import { PreloaderCounter } from "./PreloaderCounter";
 
 /**
  * Todos os elementos fixos que a versão original repetia em cada arquivo
@@ -43,7 +44,7 @@ export function Chrome() {
               : undefined
           }
         >
-          0%
+          <PreloaderCounter />
         </div>
       </div>
 
