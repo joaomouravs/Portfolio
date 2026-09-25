@@ -127,6 +127,38 @@
     "width": 160,
     "height": 200
   },
+  "lume-restaurant-1": {
+    "width": 2000,
+    "height": 2500
+  },
+  "lume-restaurant-2": {
+    "width": 2000,
+    "height": 2500
+  },
+  "lume-restaurant-3": {
+    "width": 2000,
+    "height": 2500
+  },
+  "lume-restaurant-4": {
+    "width": 2000,
+    "height": 2500
+  },
+  "lume-restaurant-5": {
+    "width": 2000,
+    "height": 2500
+  },
+  "lume-restaurant-6": {
+    "width": 2000,
+    "height": 2500
+  },
+  "lume-restaurant-7": {
+    "width": 2000,
+    "height": 2500
+  },
+  "lume-restaurant-capa": {
+    "width": 1600,
+    "height": 2844
+  },
   "patafeliz-2": {
     "width": 960,
     "height": 426

@@ -9,6 +9,7 @@ import {
   etoileAcademy,
   solen,
 } from "@/content/projects/showcase";
+import { lume } from "@/content/projects/lume";
 
 /**
  * Ordem de exibição — a mesma do deck original.
@@ -26,6 +27,7 @@ const source: Project[] = [
   auraArchitecture,
   etoileAcademy,
   solen,
+  lume,
 ];
 
 /**
